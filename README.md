@@ -36,7 +36,7 @@ Response:
 https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/[provinceId].json
 ```
 
-Example province Aceh (ID = 11):
+Example province Aceh id=11
 
 ```
 https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
@@ -66,7 +66,7 @@ Response:
 https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/[regencyId].json
 ```
 
-Example district Aceh Selatan (ID = 1103):
+Example district Aceh Selatan id=1103
 
 ```
 https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
@@ -93,10 +93,10 @@ Response:
 #### 4.Get village
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/{districtId}.json
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/[districtId].json
 ```
 
-Example village Trumon (ID = 1103010):
+Example village Trumon id=1103010
 
 ```
 https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
