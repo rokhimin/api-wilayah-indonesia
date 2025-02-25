@@ -16,128 +16,126 @@ layout: default
                                     </div>
                                     
                                     <div class="field"> 
-                                      <h3>Usage</h3>
-                                      <br>
-                                      <h4>Get province</h4>
                                       
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json
-                                      </code>
-                                      
-                                      <p>Response:</p>
-                                      
-                                      
-                                      <div class="control">
-                                        <textarea class="textarea" readonly>
-                                      [
-                                        {
-                                          "id": "11",
-                                          "name": "ACEH"
-                                        },
-                                        {
-                                          "id": "12",
-                                          "name": "SUMATERA UTARA"
-                                        },
-                                        ...
-                                      ]
-                                      </textarea></div>
-                                      
-                                      <br>
-                                      <h4>Get regencie</h4>
-                                      
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/[provinceId].json
-                                      </code>
-                                      
-                                      <p>Example province Aceh id=11</p>
-                                      
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
-                                      </code>
-                                      
-                                      <p>Response:</p>
-                                      
-                                      
-                                      <div class="control">
-                                        <textarea class="textarea" readonly>
-                                      [
-                                        {
-                                          "id": "1101",
-                                          "province_id": "11",
-                                          "name": "KABUPATEN SIMEULUE"
-                                        },
-                                        {
-                                          "id": "1102",
-                                          "province_id": "11",
-                                          "name": "KABUPATEN ACEH SINGKIL"
-                                        },
-                                        ...
-                                      ]
-                                      </textarea></div>
-                                      <br>
-                                      <h4>Get District</h4>
-                                      
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/[regencyId].json
-                                      </code>
-                                      
-                                      <p>Example district Aceh Selatan id=1103</p>
-                                      
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
-                                      </code>
-                                      
-                                      <p>Response:</p>
-                                      
-                                      
-                                      <div class="control">
-                                        <textarea class="textarea" readonly>
-                                      [
-                                        {
-                                          "id": "1103010",
-                                          "regency_id": "1103",
-                                          "name": "TRUMON"
-                                        },
-                                        {
-                                          "id": "1103011",
-                                          "regency_id": "1103",
-                                          "name": "TRUMON TIMUR"
-                                        },
-                                        ...
-                                      ]
-                                      </textarea></div>
-                                      <br>
-                                      <h4>Get village</h4>
-                                      
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/[districtId].json
-                                      </code>
-                                      
-                                      <p>Example village Trumon id=1103010</p>
-                                      
-                                      <code>
-                                      https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
-                                      </code>
-                                      
-                                      <p>Response:</p>
-                                      
-                                      
-                                      <div class="control">
-                                        <textarea class="textarea" readonly>
-                                      [
-                                        {
-                                          "id": "1103010001",
-                                          "district_id": "1103010",
-                                          "name": "KUTA PADANG"
-                                        },
-                                        {
-                                          "id": "1103010002",
-                                          "district_id": "1103010",
-                                          "name": "RAKET"
-                                        },
-                                        ...
-                                      ]
-                                        </textarea></div>
+<h3>Usage</h3>
+<br>
+<h4>Get province</h4>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json
+</code>
+
+<p>Response:</p>
+
+
+<pre>
+[
+  {
+    "id": "11",
+    "name": "ACEH"
+  },
+  {
+    "id": "12",
+    "name": "SUMATERA UTARA"
+  },
+  ...
+]
+</pre>
+
+<br>
+<h4>Get regencie</h4>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/[provinceId].json
+</code>
+
+<p>Example province Aceh id=11</p>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
+</code>
+
+<p>Response:</p>
+
+
+<pre>
+[
+  {
+    "id": "1101",
+    "province_id": "11",
+    "name": "KABUPATEN SIMEULUE"
+  },
+  {
+    "id": "1102",
+    "province_id": "11",
+    "name": "KABUPATEN ACEH SINGKIL"
+  },
+  ...
+]
+</pre>
+<br>
+<h4>Get District</h4>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/[regencyId].json
+</code>
+
+<p>Example district Aceh Selatan id=1103</p>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
+</code>
+
+<p>Response:</p>
+
+
+<pre>
+[
+  {
+    "id": "1103010",
+    "regency_id": "1103",
+    "name": "TRUMON"
+  },
+  {
+    "id": "1103011",
+    "regency_id": "1103",
+    "name": "TRUMON TIMUR"
+  },
+  ...
+]
+</pre>
+<br>
+<h4>Get village</h4>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/[districtId].json
+</code>
+
+<p>Example village Trumon id=1103010</p>
+
+<code>
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
+</code>
+
+<p>Response:</p>
+
+
+<pre>
+[
+  {
+    "id": "1103010001",
+    "district_id": "1103010",
+    "name": "KUTA PADANG"
+  },
+  {
+    "id": "1103010002",
+    "district_id": "1103010",
+    "name": "RAKET"
+  },
+  ...
+]</pre>
+  <br>
+
                                         <br><br>
 
 
