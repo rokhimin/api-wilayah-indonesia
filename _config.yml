@@ -1,9 +1,9 @@
 title: Api wilayah indonesia | whdzera
 email: whdzera@gmail.com
-baseurl: "/jekyll-api-wilayah-id" # the subpath of your site, e.g. /blog
+baseurl: "/jekyll-api-wilayah-indonesia" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: whdzera
-github_username:  rokhimin/jekyll-api-wilayah-id
+github_username:  rokhimin/jekyll-api-wilayah-indonesia
 
 permalink: /:title.rb
-files: "/jekyll-api-wilayah-id"
+files: "/jekyll-api-wilayah-indonesia"

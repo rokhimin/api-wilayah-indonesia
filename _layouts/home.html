@@ -1,4 +1,241 @@
 ---
 layout: default
 ---
-index
+<div class="hero has-background-black-bis is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-two">
+                        <div class="field">
+                          <div class="content">
+                                <div class="card has-background-dark has-text-light">
+                                    <div class="card-content"><div class="content">
+  
+                                    <div class="field">
+                                      <h5>Static API wilayah indonesia</h5>
+                                    </div>
+                                    
+                                    <div class="field"> 
+                                        
+
+### Usage
+
+#### Get province
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json
+```
+
+Response:
+
+```
+[
+  {
+    "id": "11",
+    "name": "ACEH"
+  },
+  {
+    "id": "12",
+    "name": "SUMATERA UTARA"
+  },
+  ...
+]
+```
+
+#### 2. Get regencie
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/[provinceId].json
+```
+
+Example province Aceh (ID = 11):
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
+```
+
+Response:
+
+```
+[
+  {
+    "id": "1101",
+    "province_id": "11",
+    "name": "KABUPATEN SIMEULUE"
+  },
+  {
+    "id": "1102",
+    "province_id": "11",
+    "name": "KABUPATEN ACEH SINGKIL"
+  },
+  ...
+]
+```
+
+#### 3. Get District
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/[regencyId].json
+```
+
+Example district Aceh Selatan (ID = 1103):
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
+```
+
+Response:
+
+```
+[
+  {
+    "id": "1103010",
+    "regency_id": "1103",
+    "name": "TRUMON"
+  },
+  {
+    "id": "1103011",
+    "regency_id": "1103",
+    "name": "TRUMON TIMUR"
+  },
+  ...
+]
+```
+
+#### 4.Get village
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/{districtId}.json
+```
+
+Example village Trumon (ID = 1103010):
+
+```
+https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
+```
+
+Response:
+
+```
+[
+  {
+    "id": "1103010001",
+    "district_id": "1103010",
+    "name": "KUTA PADANG"
+  },
+  {
+    "id": "1103010002",
+    "district_id": "1103010",
+    "name": "RAKET"
+  },
+  ...
+]
+```
+
+### Example code (using javascript jquery)
+
+
+<div class="select">
+    <select id="provinsi" name="provinsi">
+      <option value="">Pilih Provinsi</option>
+    </select>
+  </div>
+  
+  <div class="select">
+    <select id="kota" name="kota">
+      <option value="">Pilih Kota/Kabupaten</option>
+    </select>
+  </div>
+  
+  <div class="select">
+    <select id="kecamatan" name="kecamatan">
+      <option value="">Pilih Kecamatan</option>
+    </select>
+  </div>
+  
+  <div class="select">
+    <select id="kelurahan" name="kelurahan">
+      <option value="">Pilih Kelurahan</option>
+    </select>
+  </div>
+
+  <script src="{{ site.files }}/assets/wilayah-id.js"></script>
+
+  <p>source code</p>
+  <div class="control">
+    <textarea class="textarea" readonly>
+
+        <div class="select">
+            <select id="provinsi" name="provinsi">
+              <option value="">Pilih Provinsi</option>
+            </select>
+          </div>
+          
+          <div class="select">
+            <select id="kota" name="kota">
+              <option value="">Pilih Kota/Kabupaten</option>
+            </select>
+          </div>
+          
+          <div class="select">
+            <select id="kecamatan" name="kecamatan">
+              <option value="">Pilih Kecamatan</option>
+            </select>
+          </div>
+          
+          <div class="select">
+            <select id="kelurahan" name="kelurahan">
+              <option value="">Pilih Kelurahan</option>
+            </select>
+          </div>
+          
+          <script>
+            $.getJSON('https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json', function(data) {
+              $.each(data, function(index, provinsi) {
+                $('#provinsi').append('<option value="' + provinsi.id + '">' + provinsi.name + '</option>');
+              });
+          
+              $('#provinsi').on('change', function() {
+                var idProvinsi = $(this).val();
+                $.getJSON('https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/' + idProvinsi + '.json', function(data) {
+                  $('#kota').empty();
+                  $.each(data, function(index, kota) {
+                    $('#kota').append('<option value="' + kota.id + '">' + kota.name + '</option>');
+                  });
+          
+                  $('#kota').on('change', function() {
+                    var idKota = $(this).val();
+                    $.getJSON('https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/' + idKota + '.json', function(data) {
+                      $('#kecamatan').empty();
+                      $.each(data, function(index, kecamatan) {
+                        $('#kecamatan').append('<option value="' + kecamatan.id + '">' + kecamatan.name + '</option>');
+                      });
+          
+                      $('#kecamatan').on('change', function() {
+                        var idKecamatan = $(this).val();
+                        $.getJSON('https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/' + idKecamatan + '.json', function(data) {
+                          $('#kelurahan').empty();
+                          $.each(data, function(index, kelurahan) {
+                            $('#kelurahan').append('<option value="' + kelurahan.id + '">' + kelurahan.name + '</option>');
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          </script>
+          
+    </textarea>
+  </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
