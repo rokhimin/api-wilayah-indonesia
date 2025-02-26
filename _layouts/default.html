@@ -3,10 +3,18 @@
   {% include head.html %}
   <body>
 
+    <div class="hero is-fullheight has-background-black-bis">
+      <div class="hero-body">
+        <div class="container">
+          <div class="box has-background-black-ter" style="overflow-x: auto;">
+            <div class="content has-text-left">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
- {{ content }}
-
-
     {% include footer.html %}
   </body>
 </html>
