@@ -1,4 +1,5 @@
-
 *.md linguist-language=Ruby
 *.markdown linguist-language=Ruby
 *.css linguist-language=Ruby
+*.json linguist-language=Ruby
+*.yml linguist-language=Ruby
