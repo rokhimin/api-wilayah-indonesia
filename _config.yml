@@ -1,9 +1,6 @@
-title: Api wilayah indonesia | whdzera
+title: Api Static wilayah indonesia | whdzera
 email: whdzera@gmail.com
-baseurl: "/jekyll-api-wilayah-indonesia" 
+baseurl: "/api-wilayah-indonesia" 
 url: "" 
 twitter_username: whdzera
-github_username:  rokhimin/jekyll-api-wilayah-indonesia
-
-permalink: /:title.rb
-files: "/jekyll-api-wilayah-indonesia"
+github_username:  rokhimin/api-wilayah-indonesia
