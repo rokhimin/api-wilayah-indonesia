@@ -1,50 +1,71 @@
 ---
 layout: default
 ---
+<div class="container">
+<div class="columns is-centered">
+  <div class="column is-half">
 
-<div class="field">
-<div class="select">
-  <select id="provinsi" name="provinsi">
-    <option value="">Pilih Provinsi</option>
-  </select>
+<div class="div container">
+  
+<div class="box has-background-dark has-text-white">
+  <h3 class="title is-4 has-text-white">Pilih Wilayah</h3>
+  
+  <div class="field">
+    <label class="label has-text-white">Provinsi</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <select id="provinsi" name="provinsi">
+          <option value="">Pilih Provinsi</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label has-text-white">Kota/Kabupaten</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <select id="kota" name="kota">
+          <option value="">Pilih Kota/Kabupaten</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label has-text-white">Kecamatan</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <select id="kecamatan" name="kecamatan">
+          <option value="">Pilih Kecamatan</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label has-text-white">Kelurahan</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <select id="kelurahan" name="kelurahan">
+          <option value="">Pilih Kelurahan</option>
+        </select>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="select">
-  <select id="kota" name="kota">
-    <option value="">Pilih Kota/Kabupaten</option>
-  </select>
-</div>
-
-<div class="select">
-  <select id="kecamatan" name="kecamatan">
-    <option value="">Pilih Kecamatan</option>
-  </select>
-</div>
-
-<div class="select">
-  <select id="kelurahan" name="kelurahan">
-    <option value="">Pilih Kelurahan</option>
-  </select>
-</div>
-
-<script src="{{ site.files }}/assets/wilayah-id.js"></script>
-</div>
-<br>
-
-                                                 
-<h3>Usage</h3>
-<br>
-<h4>Get province</h4>
-
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json
-</code>
-
-<p>Response:</p>
+<script src="{{ site.baseurl }}/assets/wilayah-id.js"></script>
 
 
-<pre>
-[
+<div class="box has-background-dark has-text-white">
+<div class="content">
+  <h3 class="title is-4 has-text-white">Usage</h3>
+
+  <h4 class="title is-5 has-text-white">Get Province</h4>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/provinces</code></pre>
+  <p><strong>Response:</strong></p>
+  <pre class="box has-background-grey-dark has-text-white p-3 is-family-monospace has-text-left">[
   {
     "id": "11",
     "name": "ACEH"
@@ -54,27 +75,14 @@ https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json
     "name": "SUMATERA UTARA"
   },
   ...
-]
-</pre>
+]</pre>
 
-<br>
-<h4>Get regencie</h4>
-
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/[provinceId].json
-</code>
-
-<p>Example province Aceh id=11</p>
-
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
-</code>
-
-<p>Response:</p>
-
-
-<pre>
-[
+  <h4 class="title is-5 has-text-white">Get Regencies</h4>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/regencies/[provinceId]</code></pre>
+  <p><strong>Example (Aceh, id=11):</strong></p>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/regencies/11</code></pre>
+  <p><strong>Response:</strong></p>
+  <pre class="box has-background-grey-dark has-text-white p-3 is-family-monospace has-text-left">[
   {
     "id": "1101",
     "province_id": "11",
@@ -86,26 +94,15 @@ https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
     "name": "KABUPATEN ACEH SINGKIL"
   },
   ...
-]
-</pre>
+]</pre>
 <br>
-<h4>Get District</h4>
 
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/[regencyId].json
-</code>
-
-<p>Example district Aceh Selatan id=1103</p>
-
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
-</code>
-
-<p>Response:</p>
-
-
-<pre>
-[
+  <h4 class="title is-5 has-text-white">Get District</h4>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/districts/[regencyId]</code></pre>
+  <p><strong>Example (Aceh Selatan, id=1103):</strong></p>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/districts/1103</code></pre>
+  <p><strong>Response:</strong></p>
+  <pre class="box has-background-grey-dark has-text-white p-3 is-family-monospace has-text-left">[
   {
     "id": "1103010",
     "regency_id": "1103",
@@ -117,26 +114,15 @@ https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
     "name": "TRUMON TIMUR"
   },
   ...
-]
-</pre>
+]</pre>
 <br>
-<h4>Get village</h4>
 
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/[districtId].json
-</code>
-
-<p>Example village Trumon id=1103010</p>
-
-<code>
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
-</code>
-
-<p>Response:</p>
-
-
-<pre>
-[
+  <h4 class="title is-5 has-text-white">Get Village</h4>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/villages/[districtId]</code></pre>
+  <p><strong>Example (Trumon, id=1103010):</strong></p>
+  <pre class="is-family-monospace has-background-grey-dark has-text-white p-3"><code>https://whdzera.site/api-wilayah-indonesia/api/v1/villages/1103010</code></pre>
+  <p><strong>Response:</strong></p>
+  <pre class="box has-background-grey-dark has-text-white p-3 is-family-monospace has-text-left">[
   {
     "id": "1103010001",
     "district_id": "1103010",
@@ -149,4 +135,10 @@ https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
   },
   ...
 ]</pre>
-  <br>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>

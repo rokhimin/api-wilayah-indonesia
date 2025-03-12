@@ -4,14 +4,14 @@
 ### About
 API static Wilayah indonesia | Jekyll
 
-https://whdzera.site/jekyll-api-wilayah-indonesia
+https://whdzera.site/api-wilayah-indonesia
 
 ### Usage
 
 #### Get province
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/provinces.json
+https://whdzera.site/api-wilayah-indonesia/api/v1/provinces
 ```
 
 Response:
@@ -33,13 +33,13 @@ Response:
 #### 2. Get regencie
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/[provinceId].json
+https://whdzera.site/api-wilayah-indonesia/api/v1/regencies/[provinceId]
 ```
 
 Example province Aceh id=11
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/regencies/11.json
+https://whdzera.site/api-wilayah-indonesia/api/v1/regencies/11
 ```
 
 Response:
@@ -63,13 +63,13 @@ Response:
 #### 3. Get District
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/[regencyId].json
+https://whdzera.site/api-wilayah-indonesia/api/v1/districts/[regencyId]
 ```
 
 Example district Aceh Selatan id=1103
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/districts/1103.json
+https://whdzera.site/api-wilayah-indonesia/api/v1/districts/1103
 ```
 
 Response:
@@ -93,13 +93,13 @@ Response:
 #### 4.Get village
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/[districtId].json
+https://whdzera.site/api-wilayah-indonesia/api/v1/villages/[districtId]
 ```
 
 Example village Trumon id=1103010
 
 ```
-https://whdzera.site/jekyll-api-wilayah-indonesia/api/v1/villages/1103010.json
+https://whdzera.site/api-wilayah-indonesia/api/v1/villages/1103010
 ```
 
 Response:
@@ -122,7 +122,7 @@ Response:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Rokhimin/jekyll-api-wilayah-indonesia/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rokhimin/api-wilayah-indonesia/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
 ## Development
 
